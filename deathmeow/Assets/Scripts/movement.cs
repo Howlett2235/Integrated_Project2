@@ -26,26 +26,45 @@ public class movement : MonoBehaviour {
 	{
 		float horizontal = Input.GetAxis ("Horizontal"); // uses input manager
 		isGrounded = IsGrounded();
-	
-		checkInput ();
+		if(Input.GetButtonDown("Jump") && isGrounded ) 
+		{
+			//rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpHeight);
+			Jump();
+		}
+		
+		if(Input.GetButtonDown("Jump") && !doubleJumped && !isGrounded ) 
+		{
+			//rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpHeight);
+			Jump();
+			doubleJumped = true;
+		}
+
 		move(horizontal);
 		reset ();
 	}
 	private void move(float horizontal)
 	{
-		// checks if the player isnt already jumping
-		if (isGrounded && jump) {
-			isGrounded = false;
-			myRigidbody.AddForce(new Vector2 (0, jumpSpeed));
-		}
+	
 		myRigidbody.velocity = new Vector2 (horizontal * movementSpeed, myRigidbody.velocity.y);
 	}
-	private void checkInput()
+	public void Jump()
 	{
-		if(Input.GetKeyDown(KeyCode.Joystick1Button0)) // A on the xbox controller
-				    {
-		jump = true;
-				}
+		//myrigidbody2D.velocity = new Vector2(myrigidbody2D.velocity.x, jumpHeight);
+		
+		if(isGrounded) 
+		{
+			//rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpHeight);
+			//Jump();
+			myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpSpeed);
+		}
+		
+		if(!doubleJumped && !isGrounded) 
+		{
+			//rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpHeight);
+			//Jump();
+			myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpSpeed);
+			doubleJumped = true;
+		}
 	}
 
 	private bool IsGrounded(){ 
@@ -67,7 +86,7 @@ public class movement : MonoBehaviour {
 	}
 	private void reset()
 	{
-		jump = false; // resets the jump 
+		doubleJumped = false; // resets the jump 
 	}
 }
 
