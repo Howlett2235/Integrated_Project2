@@ -1,0 +1,157 @@
+fileFormatVersion: 2
+guid: 4a46635b773537a4db5a083139b3d5af
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: stalin cat animation_0
+    21300002: stalin cat animation_1
+    21300004: stalin cat animation_2
+    21300006: stalin cat animation_3
+    21300008: stalin cat animation_4
+    21300010: stalin cat animation_5
+    21300012: stalin cat animation_6
+    21300014: stalin cat animation_7
+    21300016: stalin cat animation_8
+    21300018: stalin cat animation_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: stalin cat animation_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 769
+        width: 259
+        height: 163
+      alignment: 9
+      pivot: {x: .870203555, y: .0963078588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: stalin cat animation_1
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 586
+        width: 458
+        height: 409
+      alignment: 9
+      pivot: {x: .463055611, y: .0725063309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: stalin cat animation_2
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 728
+        width: 150
+        height: 151
+      alignment: 9
+      pivot: {x: .199191898, y: .81126678}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: stalin cat animation_3
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 463
+        width: 138
+        height: 181
+      alignment: 9
+      pivot: {x: .213905051, y: .842772067}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: stalin cat animation_4
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 194
+        width: 268
+        height: 341
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: stalin cat animation_5
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 517
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: stalin cat animation_6
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 253
+        width: 141
+        height: 134
+      alignment: 9
+      pivot: {x: .233325824, y: .780605018}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: stalin cat animation_7
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 305
+        width: 126
+        height: 116
+      alignment: 9
+      pivot: {x: .186658099, y: .824146688}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: stalin cat animation_8
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 33
+        width: 114
+        height: 172
+      alignment: 9
+      pivot: {x: .434033304, y: .8497774}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: stalin cat animation_9
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 48
+        width: 98
+        height: 173
+      alignment: 9
+      pivot: {x: .5, y: .826020777}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

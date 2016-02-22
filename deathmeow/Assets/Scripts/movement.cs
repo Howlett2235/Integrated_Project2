@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class movement : MonoBehaviour {
+	public string playerPrefix = "P1";
 	private Rigidbody2D myRigidbody;
 	[SerializeField]
 	private float movementSpeed;
@@ -16,36 +17,55 @@ public class movement : MonoBehaviour {
 	[SerializeField]
 	private float jumpSpeed;
 	private bool doubleJumped;
+	private bool facingRight;
+	private Animator myAnimator;
+	private float jumpTime;
+	private float jumpDelay = 0.5f;
+	private bool jumped;
 	// Use this for initialization
 	void Start () {
 		myRigidbody = GetComponent<Rigidbody2D> ();
+		myAnimator = GetComponent<Animator> ();
+		facingRight = true;
+
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		float horizontal = Input.GetAxis ("Horizontal"); // uses input manager
+
+		float horizontal = Input.GetAxis (playerPrefix+"Horizontal"); // uses input manager
 		isGrounded = IsGrounded();
-		if(Input.GetButtonDown("Jump") && isGrounded ) 
+		if(Input.GetButtonDown(playerPrefix+"Jump") && isGrounded ) 
 		{
 			//rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpHeight);
 			Jump();
+			jumpTime = jumpDelay;
+			jumped = true;
+			myAnimator.SetTrigger("jump");
 		}
 		
-		if(Input.GetButtonDown("Jump") && !doubleJumped && !isGrounded ) 
+		if(Input.GetButtonDown(playerPrefix+"Jump") && !doubleJumped && !isGrounded ) 
 		{
 			//rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpHeight);
 			Jump();
+
 			doubleJumped = true;
 		}
-
+		jumpTime -= Time.deltaTime;
+		if (jumpTime <= 0 && isGrounded && jumped) {
+			myAnimator.SetTrigger("land");
+			jumped = false;
+		}
 		move(horizontal);
-		reset ();
+		Flip (horizontal);
 	}
 	private void move(float horizontal)
 	{
 	
 		myRigidbody.velocity = new Vector2 (horizontal * movementSpeed, myRigidbody.velocity.y);
+		myAnimator.SetFloat ("speed", Mathf.Abs (horizontal));
+
 	}
 	public void Jump()
 	{
@@ -56,6 +76,8 @@ public class movement : MonoBehaviour {
 			//rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpHeight);
 			//Jump();
 			myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpSpeed);
+			doubleJumped = false;
+
 		}
 		
 		if(!doubleJumped && !isGrounded) 
@@ -64,7 +86,9 @@ public class movement : MonoBehaviour {
 			//Jump();
 			myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpSpeed);
 			doubleJumped = true;
+
 		}
+
 	}
 
 	private bool IsGrounded(){ 
@@ -78,15 +102,22 @@ public class movement : MonoBehaviour {
 				if (colliders[i].gameObject !=gameObject)
 				{
 						return true;
+
 				}
 				}
 			}
 		}
 		return false;
 	}
-	private void reset()
+	private void Flip(float horizontal)
 	{
-		doubleJumped = false; // resets the jump 
+		if (horizontal > 0 && !facingRight || horizontal < 0 && facingRight ) 
+		{
+			facingRight = !facingRight;
+			Vector3 theScale = transform.localScale;
+			theScale.x *= -1;
+			transform.localScale = theScale;
+		}
 	}
 }
 

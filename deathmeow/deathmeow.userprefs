@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\lab3\Assets\VoxelGenerator.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player2.cs">
     <Files>
-      <File FileName="..\lab3\Assets\VoxelGenerator.cs" Line="10" Column="2" />
+      <File FileName="Assets\Scripts\Player2.cs" Line="30" Column="2" />
+      <File FileName="Assets\Scripts\PlatformCollider.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\movement.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
